@@ -62,7 +62,7 @@ sudo chown -R $@@USER @@ :$@@USER @@ /var/www/@@ your_domain @@
 sudo nano /etc/apache2/sites-available/your_domain.conf
 <VirtualHost *:80>
     ServerName @@your_domain @@
-    ServerAlias www.@@your_domain @@
+    ServerAlias  - www.@@your_domain @@
     ServerAdmin webmaster@localhost
     DocumentRoot /var/www/@@your_domain @@
     ErrorLog ${APACHE_LOG_DIR}/error.log
