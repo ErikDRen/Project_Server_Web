@@ -53,17 +53,18 @@ tuto :
 
 
 ```diff
+
 10-Create your domain
-sudo mkdir /var/www/@@your_domain@@
-11-Get Ownership of @@your_domain@@
-sudo chown -R $@@USER@@:$@@USER@@ /var/www/@@your_domain@@
+sudo mkdir /var/www/@@your_domain @@
+11-Get Ownership of @@your_domain @@
+sudo chown -R $@@USER @@:$@@USER @@ /var/www/@@your_domain @@
 12-Configure
 sudo nano /etc/apache2/sites-available/your_domain.conf
 <VirtualHost *:80>
-    ServerName @@your_domain@@
-    ServerAlias www.@@your_domain@@
+    ServerName @@your_domain @@
+    ServerAlias www.@@your_domain @@
     ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/@@your_domain@@
+    DocumentRoot /var/www/@@your_domain @@
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
