@@ -30,29 +30,8 @@ tuto :
 > Wordpress<br/> Wekan<br/>
 
 tuto :
-
-# Configuration a réaliser :
-<p>
-- systeme:<br/>
-  instalation ubuntu serveur avec OpenSSH<br/>
-- réseau:<br/>
-  serveur backend en réseau interne<br/>
-  serveur proxy en réseau interne + bridge<br/>
-- services: <br/>
-  changer le port d'utilisation de wekan lors de l'installation avec snap pour éviter les conflits avec apache2<br/>
-<p>
-
-- configuration du fichier hosts coté windows et proxy lorsque l'on rajoute un site
-
-
-
-# Comment ajouter un site supplémentaire :
-- sur le backend :
-- sur le proxy :
-- sur notre machine windows :
-
-
 ```
+LAMPSTACK
 Change the YELLOW TEXT by whatever
 
 1-Update
@@ -130,4 +109,27 @@ http://your_domain_or_ip/info.php
 sudo rm /var/www/your_domain/info.php
 
 ```
+
+
+
+# Configuration a réaliser :
+<p>
+- systeme:<br/>
+  instalation ubuntu serveur avec OpenSSH<br/>
+- réseau:<br/>
+  serveur backend en réseau interne<br/>
+  serveur proxy en réseau interne + bridge<br/>
+- services: <br/>
+  changer le port d'utilisation de wekan lors de l'installation avec snap pour éviter les conflits avec apache2<br/>
+<p>
+
+- configuration du fichier hosts coté windows et proxy lorsque l'on rajoute un site
+
+
+
+# Comment ajouter un site supplémentaire :
+- sur le backend :
+- sur le proxy :
+- sur notre machine windows :
+
 
