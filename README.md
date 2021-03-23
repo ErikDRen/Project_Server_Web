@@ -30,9 +30,12 @@ Installation de wordpress et wekan <br/><p>
 
 # Configuration a réaliser :
 - fichier host
-- un serveur en interne et un autre serveur a la fois un interne et en acces par pont
+- un serveur en interne et un autre serveur a la fois en interne et en acces par pont
 
 
-
+# Comment ajouter un site supplémentaire :
+- sur le backend :
+- sur le proxy :
+- sur notre machine windows :
 
 
