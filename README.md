@@ -16,14 +16,16 @@ installation de lynx <br/>
 
 - détaille des configuration a mettre en place pour faire fonctionner la solution:
 
->Installation d'un LAMP stack <br/>
+<p>Installation d'un LAMP stack <br/>
 Installation de snap <br/>
-Installation de wordpress et wekan <br/>
+Installation de wordpress et wekan <br/><p>
 
 # Documentation d'exploitation:
 - outils :
 > Apache2<br/> MySQL<br/> Nginx
 - service :
+<h1>Wekan
+  Wordpress<h1/>
 - tuto :
 
 # Configuration a réaliser :
