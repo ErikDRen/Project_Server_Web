@@ -29,6 +29,8 @@ Installation de wordpress et wekan <br/><p>
 - tuto :
 
 # Configuration a réaliser :
+systeme:
+
 - configuration du fichier hosts coté windows et proxy
 - service : config du port pour wekan <br/>
 
