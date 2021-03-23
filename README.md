@@ -22,9 +22,9 @@ Installation de wordpress et wekan <br/><p>
 
 # Documentation d'exploitation:
 - outils :
-> Apache2<br/> MySQL<br/> Nginx
+> Apache2<br/> MySQL<br/> Nginx<br/> Snap
 - service :
-<p>Wekan
+<p>Wekan/
   Wordpress<p>
 - tuto :
 
