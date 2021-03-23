@@ -48,11 +48,11 @@ réseau:
 - sur le proxy :
 - sur notre machine windows :
 
-
-- text in red
+```diff
+- ololololo
 + text in green
 ! text in orange
 # text in gray
 @@ text in purple (and bold)@@
-
+```
 
