@@ -8,11 +8,11 @@ a simple projec on a Web Server
 
 - bonne pratique :
 
->backup des fichiers <br/>
+<p>backup des fichiers <br/>
 serveur de bonne taille par rapport a l'utilisation <br/>
 synchroniser l'horloge des machines <br/>
 installation de nettools <br/>
-installation de lynx <br/>
+installation de lynx <br/><p>
 
 - détaille des configuration a mettre en place pour faire fonctionner la solution:
 
@@ -24,8 +24,8 @@ Installation de wordpress et wekan <br/><p>
 - outils :
 > Apache2<br/> MySQL<br/> Nginx
 - service :
-<h1>Wekan
-  Wordpress<h1/>
+<p>Wekan
+  Wordpress<p>
 - tuto :
 
 # Configuration a réaliser :
