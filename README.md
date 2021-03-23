@@ -54,7 +54,7 @@ tuto :
 
 ```diff
 
-10-Create your domain
+- 10-Create your domain
 sudo mkdir /var/www/@@your_domain @@
 11-Get Ownership of @@your_domain @@
 sudo chown -R $@@USER @@:$@@USER @@ /var/www/@@your_domain @@
