@@ -31,7 +31,7 @@ Installation de wordpress et wekan <br/><p>
 # Configuration a réaliser :
 - configuration du fichier hosts coté windows et proxy
 - service : config du port pour wekan <br/>
-<h2>réseau<h2>
+<h3>réseau<h3>  <br/>
 - backend : réseau interne
 - proxy : interne et bridge
 
