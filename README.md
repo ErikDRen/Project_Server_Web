@@ -8,7 +8,7 @@ a simple projec on a Web Server
 
 - bonne pratique :
 
-backup des fichiers <br/>
+>backup des fichiers <br/>
 serveur de bonne taille par rapport a l'utilisation <br/>
 synchroniser l'horloge des machines <br/>
 installation de nettools <br/>
@@ -16,7 +16,7 @@ installation de lynx <br/>
 
 - détaille des configuration a mettre en place pour faire fonctionner la solution:
 
-Installation d'un LAMP stack <br/>
+>Installation d'un LAMP stack <br/>
 Installation de snap <br/>
 Installation de wordpress et wekan <br/>
 
