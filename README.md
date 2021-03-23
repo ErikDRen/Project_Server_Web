@@ -1,6 +1,8 @@
 # Project_Server_Web
 a simple projec on a Web Server
-# Léxique :
+# Lexique :
+reverse proxy : intermédiaire entre les clients et les serveurs web. Par exemple, 
+il permet d’apporter de la sécurité.
 
 # Documentation d'architecture:
 - définition du réseau :
