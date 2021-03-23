@@ -9,7 +9,7 @@ a simple projec on a Web Server
 - bonne pratique :
 
 backup des fichiers
-serveur de bonne taille par rapport a l'utilisation <br/>
+serveur de bonne taille par rapport a l'utilisation
 synchroniser l'horloge des machines
 installation de nettools
 installation de lynx
@@ -21,8 +21,8 @@ Installation de snap
 Installation de wordpress et wekan
 
 # Documentation d'exploitation:
-- outils :
-- service :
+- outils : Apache2,SQL,Nginx,Snap
+- service : Wordpress,Wekkan
 - tuto :
 
 # Configuration a réaliser :
