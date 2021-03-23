@@ -3,6 +3,7 @@ a simple projec on a Web Server
 
 # Documentation d'architecture:
 - définition du réseau :
+
 - détaille des configuration a mettre en place pour faire fonctionner la solution:
 
 # Documentation d'exploitation:
@@ -11,5 +12,7 @@ a simple projec on a Web Server
 - tuto :
 
 # Configuration a réaliser :
+
+
 
 
