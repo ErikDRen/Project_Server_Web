@@ -29,8 +29,12 @@ Installation de wordpress et wekan <br/><p>
 - tuto :
 
 # Configuration a réaliser :
-- fichier host
-- un serveur en interne et un autre serveur a la fois en interne et en acces par pont
+- configuration du fichier hosts coté windows et proxy
+- service : config du port pour wekan
+réseau :
+- backend : réseau interne
+- proxy : interne et bridge
+
 
 
 # Comment ajouter un site supplémentaire :
