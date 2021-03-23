@@ -30,6 +30,7 @@ Installation de wordpress et wekan <br/><p>
 
 # Configuration a réaliser :
 - fichier host
+- un serveur en interne et un autre serveur a la fois un interne et en acces par pont
 
 
 
