@@ -32,7 +32,7 @@ tuto :
 tuto :
 
 # Configuration a réaliser :
-<h4>
+<p>
 systeme:<br/>
   instalation ubuntu serveur avec OpenSSH<br/>
 réseau:<br/>
@@ -40,7 +40,7 @@ réseau:<br/>
   serveur proxy en réseau interne + bridge<br/>
 services: <br/>
   changer le port d'utilisation de wekan lors de l'installation avec snap pour éviter les conflits avec apache2<br/>
-<h4>
+<p>
 
 - configuration du fichier hosts coté windows et proxy
 - service : config du port pour wekan <br/>
