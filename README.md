@@ -8,7 +8,7 @@ a simple projec on a Web Server
 
 - bonne pratique :
 
-backup des fichiers
+backup des fichiers <br/>
 serveur de bonne taille par rapport a l'utilisation <br/>
 synchroniser l'horloge des machines <br/>
 installation de nettools <br/>
@@ -22,6 +22,7 @@ Installation de wordpress et wekan <br/>
 
 # Documentation d'exploitation:
 - outils :
+> Apache2<br/> MySQL<br/> Nginx
 - service :
 - tuto :
 
