@@ -54,10 +54,10 @@ tuto :
 
 ```diff
 
-- 10-Create your domain
-sudo mkdir /var/www/@@your_domain @@
-11-Get Ownership of @@your_domain @@
-sudo chown -R $@@USER @@:$@@USER @@ /var/www/@@your_domain @@
+10-Create your domain
+sudo mkdir /var/www/@@ your_domain @@
+11-Get Ownership of @@ your_domain @@
+sudo chown -R $@@USER @@ :$@@USER @@ /var/www/@@ your_domain @@
 12-Configure
 sudo nano /etc/apache2/sites-available/your_domain.conf
 <VirtualHost *:80>
