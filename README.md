@@ -29,6 +29,7 @@ Installation de wordpress et wekan <br/><p>
 - tuto :
 
 # Configuration a réaliser :
+- fichier host
 
 
 
