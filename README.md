@@ -9,7 +9,7 @@ a simple projec on a Web Server
 - bonne pratique :
 
 backup des fichiers
-serveur de bonne taille par rapport a l'utilisation
+serveur de bonne taille par rapport a l'utilisation <br/>
 synchroniser l'horloge des machines
 installation de nettools
 installation de lynx
