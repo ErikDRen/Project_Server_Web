@@ -28,20 +28,16 @@ Installation de wordpress et wekan <br/><p>
 > Apache2<br/> MySQL<br/> Nginx<br/> Snap<br/>
 
 tuto :
-- service :
-> Wordpress<br/> Wekan<br/>
-
-tuto :
 ```
-LAMPSTACK
-Change the YELLOW TEXT by whatever
+LAMPSTACK(Apache2 et Sql)
+Change the "TEXT" by whatever
 
 1-Update
 sudo apt update
 2-Download Apache
 sudo apt install apache2
 3-Allow Apache through the firewall
-sudo ufw allow in "Apache"
+sudo ufw allow in Apache
 sudo ufw status (to check)
 4-Download MySQL
 sudo apt install mysql-server
@@ -59,16 +55,16 @@ sudo apt install php libapache2-mod-php php-mysql
 9-Confirm
 php -v
 10-Create your domain
-sudo mkdir /var/www/your_domain
-11-Get Ownership of your_domain
-sudo chown -R $USER@@:$USER /var/www/your_domain
+sudo mkdir /var/www/”your_domain”
+11-Get Ownership of “your_domain”
+sudo chown -R $”USER@@”:$”USER” /var/www/”your_domain”
 12-Configure
 sudo nano /etc/apache2/sites-available/your_domain.conf
 <VirtualHost *:80>
-    ServerName your_domain
-    ServerAlias www.your_domain
+    ServerName “your_domain”
+    ServerAlias www.”your_domain”
     ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/your_domain
+    DocumentRoot /var/www/”your_domain”
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
@@ -82,14 +78,14 @@ sudo apache2ctl configtest
 15-Apply
 sudo systemctl reload apache2
 16-Create an index.html to make the site
-nano /var/www/your_domain/index.html
+nano /var/www/”your_domain”/index.html
 
 <h1>It works!</h1>
 
 <p>This is the landing page of <strong>your_domain</strong>.</p>
 
 17-Check on your browser
-http://your_domain_or_ip
+http://”your_domain”_or_ip
 18-Prioritize Php over html
 sudo nano /etc/apache2/mods-enabled/dir.conf
 
@@ -106,11 +102,15 @@ nano /var/www/your_domain/info.php
 phpinfo();
 
 21-Go check on your browser
-http://your_domain_or_ip/info.php
+http://”your_domain”_or_ip/info.php
 22-Remove info.php
 sudo rm /var/www/your_domain/info.php
-
 ```
+
+- service :
+> Wordpress<br/> Wekan<br/>
+
+tuto :
 
 
 
