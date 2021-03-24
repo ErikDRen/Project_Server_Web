@@ -28,6 +28,7 @@ Installation de wordpress et wekan <br/><p>
 > Apache2<br/> MySQL<br/> Nginx<br/> Snap<br/>
 
 tuto : LAMPSTACK(Apache2 et Sql)
+
 ```
 Change the "TEXT" by whatever
 
@@ -97,7 +98,9 @@ http://”your_domain”_or_ip/info.php
 22-Remove info.php
 sudo rm /var/www/your_domain/info.php
 ```
+
 tuto : Avoir plusieurs domaines
+
 ```
 Change the "TEXT" by whatever
 
@@ -166,7 +169,8 @@ b) <Directory /var/www/’wordpress’/>
 c) sudo a2enmod rewrite
 d) sudo apache2ctl configtest(for syntax error)
     Output (if your syntax is correct):
-    AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+    AH00558: apache2: Could not reliably determine the server's fully qualified domain name, 
+    using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
     Syntax OK
 e) sudo systemctl restart apache2
 
@@ -244,7 +248,16 @@ g) Anywhere else in the file add:
 a) https://’server_domain_or_IP’
 ```
 
+tuto: Wekan(avec Snap)
 
+```
+1-apt-get install snapd
+2-snap install wekan
+3-snap set wekan root-url="http://your_ip" (ex: “http://192.168.10.12”)
+4-snap set wekan port="your_port" (ex:”3001”)
+5-systemctl restart snap.wekan.wekan
+6-On your browser http://your_ip:your_port/sign-in
+```
 
 # Configuration a réaliser :
 
