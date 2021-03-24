@@ -27,9 +27,8 @@ Installation de wordpress et wekan <br/><p>
 - outils :
 > Apache2<br/> MySQL<br/> Nginx<br/> Snap<br/>
 
-tuto :
+tuto : LAMPSTACK(Apache2 et Sql)
 ```
-LAMPSTACK(Apache2 et Sql)
 Change the "TEXT" by whatever
 
 1-Update
@@ -68,7 +67,6 @@ sudo nano /etc/apache2/sites-available/your_domain.conf
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-
 13-Activate VirtualHost
 sudo a2ensite your_domain
 13.5(optionel)-Delete Apache basic site
@@ -79,34 +77,63 @@ sudo apache2ctl configtest
 sudo systemctl reload apache2
 16-Create an index.html to make the site
 nano /var/www/”your_domain”/index.html
-
 <h1>It works!</h1>
-
 <p>This is the landing page of <strong>your_domain</strong>.</p>
-
 17-Check on your browser
 http://”your_domain”_or_ip
 18-Prioritize Php over html
 sudo nano /etc/apache2/mods-enabled/dir.conf
-
 <IfModule mod_dir.c>
         DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
 </IfModule>
-
 19-Apply
 sudo systemctl reload apache2
 20-Check php
 nano /var/www/your_domain/info.php
-
 <?php
 phpinfo();
-
 21-Go check on your browser
 http://”your_domain”_or_ip/info.php
 22-Remove info.php
 sudo rm /var/www/your_domain/info.php
 ```
+tuto : Avoir plusieur domaine
+```
+Change the "TEXT" by whatever
+1-Make a Directory for Each Site
+a) mkdir -p /var/www/"domain.com"/
+b) mkdir -p /var/www/"domain2.com"/
 
+2-Set Folder Permissions
+a) chmod -R 755 /var/www
+
+3-Set up an Index Page (If you want to make sure the index.html file is created for each domain)
+a) vim /var/www/”domain.com”/index.html
+b) “testing for domain.com”
+c) vim /var/www/”domain2.com”/index.html
+d) “testing for domain2.com”
+
+4- Copy the Config File for Each Site
+a) cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/”domain.com”.conf
+b) cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/”domain2.com”.conf
+
+5- Edit the Config File for Each Site
+a) vim /etc/apache2/sites-available/”domain.com”.conf
+b) <VirtualHost *:80>
+        ServerAdmin “admin@example.com”
+        ServerName “domain.com”
+        ServerAlias “www.domain.com”
+        DocumentRoot “/var/www/domain.com”
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+   </VirtualHost>
+
+6-Enable Your Config File
+a) a2dissite 000-default.conf
+b) a2ensite domain.com.conf
+c) a2ensite domain2.com.conf
+d) systemctl restart apache2
+```
 - service :
 > Wordpress<br/> Wekan<br/>
 
