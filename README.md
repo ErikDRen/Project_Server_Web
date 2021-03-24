@@ -99,7 +99,7 @@ http://”your_domain”_or_ip/info.php
 sudo rm /var/www/your_domain/info.php
 ```
 
-tuto : Avoir plusieurs domaines
+tuto : Avoir plusieurs sites actif sur le même serveur
 
 ```
 Change the "TEXT" by whatever
