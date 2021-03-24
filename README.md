@@ -138,7 +138,111 @@ d) systemctl restart apache2
 - service :
 > Wordpress<br/> Wekan<br/>
 
-tuto :
+tuto : Wordpress
+
+```Change the ‘TEXT’ by whatever
+
+1-Creating a MySQL Database and User for WordPress
+a) mysql -u root -p
+b) sudo mysql -u root
+c) ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'new_password';
+d) mysql -u root -p
+e) CREATE DATABASE ‘wordpress’ DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+f) CREATE USER 'wordpressuser'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
+g) GRANT ALL ON ‘wordpress’.* TO 'wordpressuser'@'%';
+h) FLUSH PRIVILEGES;
+i) EXIT;
+
+2-Installing Additional PHP Extensions
+a) sudo apt update
+b) sudo apt install php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip
+c) sudo systemctl restart apache2
+
+3-Adjusting Apache’s Configuration to Allow for .htaccess Overrides and Rewrites
+a) sudo nano /etc/apache2/sites-available/’wordpress’.conf
+b) <Directory /var/www/’wordpress’/>
+       AllowOverride All
+   </Directory>
+c) sudo a2enmod rewrite
+d) sudo apache2ctl configtest(for syntax error)
+    Output (if your syntax is correct):
+    AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+    Syntax OK
+e) sudo systemctl restart apache2
+
+4-Downloading WordPress
+a) cd /tmp
+b) curl -O https://wordpress.org/latest.tar.gz
+c) tar xzvf latest.tar.gz
+d) touch /tmp/wordpress/.htaccess
+e) cp /tmp/wordpress/wp-config-sample.php /tmp/wordpress/wp-config.php
+f) mkdir /tmp/wordpress/wp-content/upgrade
+g) sudo cp -a /tmp/’wordpress’/. /var/www/’wordpress’
+
+5-Configuring the WordPress Directory
+a) sudo chown -R www-data:www-data /var/www/’wordpress’
+b) sudo find /var/www/’wordpress’/ -type d -exec chmod 750 {} \;
+c) sudo find /var/www/’wordpress’/ -type f -exec chmod 640 {} \;
+d) curl -s https://api.wordpress.org/secret-key/1.1/salt/
+    Output(Warning! It is important that you request unique values each time. Do NOT copy the values below!
+    You will have something like that):
+    define('AUTH_KEY',         '1jl/vqfs<XhdXoAPz9 DO NOT COPY THESE VALUES c_j{iwqD^<+c9.k<J@4H');
+    define('SECURE_AUTH_KEY',  'E2N-h2]Dcvp+aS/p7X DO NOT COPY THESE VALUES {Ka(f;rv?Pxf})CgLi-3');
+    define('LOGGED_IN_KEY',    'W(50,{W^,OPB%PB<JF DO NOT COPY THESE VALUES 2;y&,2m%3]R6DUth[;88');
+    define('NONCE_KEY',        'll,4UC)7ua+8<!4VM+ DO NOT COPY THESE VALUES #`DXF+[$atzM7 o^-C7g');
+    define('AUTH_SALT',        'koMrurzOA+|L_lG}kf DO NOT COPY THESE VALUES  07VC*Lj*lD&?3w!BT#-');
+    define('SECURE_AUTH_SALT', 'p32*p,]z%LZ+pAu:VY DO NOT COPY THESE VALUES C-?y+K0DK_+F|0h{!_xY');
+    define('LOGGED_IN_SALT',   'i^/G2W7!-1H2OQ+t$3 DO NOT COPY THESE VALUES t6**bRVFSD[Hi])-qS`|');
+    define('NONCE_SALT',       'Q6]U:K?j4L%Z]}h^q7 DO NOT COPY THESE VALUES 1% ^qUswWgn+6&xqHN&%');
+
+e) sudo nano /var/www/wordpress/wp-config.php
+    Search for:
+    . . .define('AUTH_KEY',         'put your unique phrase here');
+    define('SECURE_AUTH_KEY',  'put your unique phrase here');
+    define('LOGGED_IN_KEY',    'put your unique phrase here');
+    define('NONCE_KEY',        'put your unique phrase here');
+    define('AUTH_SALT',        'put your unique phrase here');
+    define('SECURE_AUTH_SALT', 'put your unique phrase here');
+    define('LOGGED_IN_SALT',   'put your unique phrase here');
+    define('NONCE_SALT',       'put your unique phrase here');
+    . . .
+f) Delete those lines and change the values with key:
+    . . .
+    define('AUTH_KEY',         'VALUES COPIED FROM THE COMMAND LINE');
+    define('SECURE_AUTH_KEY',  'VALUES COPIED FROM THE COMMAND LINE');
+    define('LOGGED_IN_KEY',    'VALUES COPIED FROM THE COMMAND LINE');
+    define('NONCE_KEY',        'VALUES COPIED FROM THE COMMAND LINE');
+    define('AUTH_SALT',        'VALUES COPIED FROM THE COMMAND LINE');
+    define('SECURE_AUTH_SALT', 'VALUES COPIED FROM THE COMMAND LINE');
+    define('LOGGED_IN_SALT',   'VALUES COPIED FROM THE COMMAND LINE');
+    define('NONCE_SALT',       'VALUES COPIED FROM THE COMMAND LINE');
+    . . .
+g) Anywhere else in the file add:
+    . . .
+    // ** MySQL settings - You can get this info from your web host ** //
+    /** The name of the database for WordPress */
+    define( 'DB_NAME', 'wordpress' );
+
+    /** MySQL database username */
+    define( 'DB_USER', 'wordpressuser' );
+
+    /** MySQL database password */
+    define( 'DB_PASSWORD', 'password' );
+
+    /** MySQL hostname */
+    define( 'DB_HOST', 'localhost' );
+
+    /** Database Charset to use in creating database tables. */
+    define( 'DB_CHARSET', 'utf8' );
+
+    /** The Database Collate type. Don't change this if in doubt. */
+    define( 'DB_COLLATE', '' );
+    . . .
+    define('FS_METHOD', 'direct');
+
+6-Completing the Installation Through the Web Interface
+a) https://’server_domain_or_IP’
+```
 
 
 
