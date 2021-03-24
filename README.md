@@ -97,9 +97,10 @@ http://”your_domain”_or_ip/info.php
 22-Remove info.php
 sudo rm /var/www/your_domain/info.php
 ```
-tuto : Avoir plusieur domaine
+tuto : Avoir plusieurs domaines
 ```
 Change the "TEXT" by whatever
+
 1-Make a Directory for Each Site
 a) mkdir -p /var/www/"domain.com"/
 b) mkdir -p /var/www/"domain2.com"/
