@@ -300,16 +300,15 @@ CustomLog ${APACHE_LOG_DIR}/access.log combined<br>
 <br>
     a2dissite 000-default.conf<br>
     a2ensite domain.com.conf<br>
-a2ensite domain2.com.conf<br>
     systemctl restart apache2<br>
 <p>
 - sur le proxy :
 <p>server {<br>
-server_name domain2.com;<br>
+server_name domain.com;<br>
 location / {<br>
         proxy_set_header Host $host;<br>
         proxy_set_header X-Real-IP $remote_addr;<br>
-        proxy_pass http://domain2.com;<br>
+        proxy_pass http://domain.com;<br>
 }<br>
 }<br>
     
