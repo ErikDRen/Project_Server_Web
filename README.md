@@ -304,6 +304,17 @@ a2ensite domain2.com.conf<br>
     systemctl restart apache2<br>
 <p>
 - sur le proxy :
+<p>server {<br>
+server_name domain2.com;<br>
+location / {<br>
+        proxy_set_header Host $host;<br>
+        proxy_set_header X-Real-IP $remote_addr;<br>
+        proxy_pass http://domain2.com;<br>
+}<br>
+}<br>
+    
+configurer le fichier hosts (/etc/hosts)
 - sur notre machine windows :
+configurer le fichier hosts
 
 
