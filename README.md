@@ -281,6 +281,28 @@ tuto: Wekan(avec Snap)
 
 # Comment ajouter un site supplémentaire :
 - sur le backend :
+<p>mkdir -p /var/www/domain.com/public_html<br>
+chmod -R 755 /var/www<br>
+vim /var/www/domain.com/public_html/index.html<br>
+a l'intérieur écriver quelque chose comme : <br>
+testing for domain.com<br>
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/domain.com.conf<br>
+vim /etc/apache2/sites-available/domain.com.conf<br>
+<br>
+<VirtualHost *:80><br>
+ServerAdmin admin@example.com<br>
+ServerName domain.com<br>
+ServerAlias www.domain.com<br>
+DocumentRoot /var/www/domain.com/public_html<br>
+ErrorLog ${APACHE_LOG_DIR}/error.log<br>
+CustomLog ${APACHE_LOG_DIR}/access.log combined<br>
+</VirtualHost><br>
+<br>
+    a2dissite 000-default.conf<br>
+    a2ensite domain.com.conf<br>
+a2ensite domain2.com.conf<br>
+    systemctl restart apache2<br>
+<p>
 - sur le proxy :
 - sur notre machine windows :
 
