@@ -266,7 +266,7 @@ tuto: Wekan(avec Snap)
 # Configuration a réaliser :
 
 - systeme:<br/>
-  instalation ubuntu serveur avec OpenSSH<br/>
+  installation ubuntu serveur avec OpenSSH<br/>
   
 - réseau:<br/>
   serveur backend en réseau interne<br/>
