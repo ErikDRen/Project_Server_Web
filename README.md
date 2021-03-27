@@ -3,7 +3,8 @@ a simple projec on a Web Server
 # Lexique :
 back-end : Aussi appelé un "arrière-plan" est un terme désignant un étage de sortie d'un logiciel devant produire un résultat. <br>
 reverse proxy : intermédiaire entre les clients et les serveurs web. Par exemple, 
-il permet d’apporter de la sécurité.
+il permet d’apporter de la sécurité.<br>
+SSL : pour Secure Socket Layer, est un protocole de sécurité qui permet de sécuriser les échanges d'informations entre des appareils reliés à un réseau interne ou à Internet.
 
 # Documentation d'architecture:
 - définition du réseau :
