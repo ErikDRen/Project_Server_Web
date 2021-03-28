@@ -324,11 +324,12 @@ configurer le fichier hosts<br>
     Common Name (e.g. server FQDN or YOUR name) []:server_IP_address<br>
     sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096<br>
     sudo nano /etc/nginx/snippets/self-signed.conf<br>
-    >ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
+  >ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
     ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
     
-   <br>sudo nano /etc/nginx/snippets/ssl-params.conf
->ssl_protocols TLSv1.2;
+  <br>sudo nano /etc/nginx/snippets/ssl-params.conf
+  <br>
+  >ssl_protocols TLSv1.2;
 ssl_prefer_server_ciphers on;
 ssl_dhparam /etc/nginx/dhparam.pem;
 ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384;
