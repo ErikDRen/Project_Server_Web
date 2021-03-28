@@ -353,12 +353,25 @@ server {<br>
     listen [::]:443 ssl;<br>
     include snippets/self-signed.conf;<br>
     include snippets/ssl-params.conf;<br><br>
-
-   server_name example.com www.example.com;<br>
-   root /var/www/example.com/html;<br>
     
-   index index.html index.htm index.nginx-debian.html;<br><br>
+   server_name example.com;<br>
+   ssl on;<br>
+    ssl_session_cache  builtin:1000  shared:SSL:10m;<br>
+    ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;<br>
+    #ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;<br>
+   ssl_prefer_server_ciphers on;<br><br>
 
+   location / {<br>
+<br>
+ proxy_set_header        Host $host;<br>
+ proxy_set_header        X-Real-IP $remote_addr;<br>
+ proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;<br>
+ proxy_set_header        X-Forwarded-Proto $scheme;<br>
+ <br>
+  proxy_pass          http://wordpress;<br>
+  proxy_read_timeout  90;<br>
+  proxy_redirect      http://example https://example;<br>
+<br>
    . . .<br><br>
 
 }<br>
