@@ -340,8 +340,7 @@ ssl_session_tickets off; # Requires nginx >= 1.5.9<br>
 ssl_stapling on; # Requires nginx >= 1.3.7<br>
 ssl_stapling_verify on; # Requires nginx => 1.3.7<br>
 resolver 8.8.8.8 8.8.4.4 valid=300s;<br>
-resolver_timeout 5s;<br><br>
-
+resolver_timeout 5s;<br>
 add_header X-Frame-Options DENY;<br>
 add_header X-Content-Type-Options nosniff;<br>
 add_header X-XSS-Protection "1; mode=block";<br>
@@ -349,30 +348,29 @@ add_header X-XSS-Protection "1; mode=block";<br>
 <br>
 sudo nano /etc/nginx/sites-available/conf.d/test<br>
 
->server {
-    listen 443 ssl;
-    listen [::]:443 ssl;
-    include snippets/self-signed.conf;
-    include snippets/ssl-params.conf;
+server {<br>
+    listen 443 ssl;<br>
+    listen [::]:443 ssl;<br>
+    include snippets/self-signed.conf;<br>
+    include snippets/ssl-params.conf;<br><br>
 
-    server_name example.com www.example.com;
-    root /var/www/example.com/html;
+    server_name example.com www.example.com;<br>
+    root /var/www/example.com/html;<br>
     
-    index index.html index.htm index.nginx-debian.html;
+    index index.html index.htm index.nginx-debian.html;<br><br>
 
-    . . .
->
+    . . .<br><br>
 
->}
-. . .
-server {
-    listen 80;
-    listen [::]:80;
+}<br>
+. . .<br>
+server {<br>
+    listen 80;<br>
+    listen [::]:80;<br><br>
 
-    server_name example.com www.example.com;
+    server_name example.com www.example.com;<br><br>
 
-    return 302 https://$server_name$request_uri;
->}
+    return 302 https://$server_name$request_uri;<br>
+}<br>
 <br>
 sudo ufw allow 'Nginx Full'<br>
 sudo ufw delete allow 'Nginx HTTP'<br>
