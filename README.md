@@ -324,56 +324,59 @@ configurer le fichier hosts<br>
     Common Name (e.g. server FQDN or YOUR name) []:server_IP_address<br>
     sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096<br>
     sudo nano /etc/nginx/snippets/self-signed.conf<br>
-  >ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
-    ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
+    ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;<br>
+    ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;<br>
     
   <br>sudo nano /etc/nginx/snippets/ssl-params.conf
   <br>
-  >ssl_protocols TLSv1.2;
-ssl_prefer_server_ciphers on;
-ssl_dhparam /etc/nginx/dhparam.pem;
-ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384;
-ssl_ecdh_curve secp384r1; # Requires nginx >= 1.1.0
-ssl_session_timeout  10m;
-ssl_session_cache shared:SSL:10m;
-ssl_session_tickets off; # Requires nginx >= 1.5.9
-ssl_stapling on; # Requires nginx >= 1.3.7
-ssl_stapling_verify on; # Requires nginx => 1.3.7
-resolver 8.8.8.8 8.8.4.4 valid=300s;
-resolver_timeout 5s;
+  >ssl_protocols TLSv1.2;<br>
+ssl_prefer_server_ciphers on;<br>
+ssl_dhparam /etc/nginx/dhparam.pem;<br>
+ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384;<br>
+ssl_ecdh_curve secp384r1; # Requires nginx >= 1.1.0<br>
+ssl_session_timeout  10m;<br>
+ssl_session_cache shared:SSL:10m;<br>
+ssl_session_tickets off; # Requires nginx >= 1.5.9<br>
+ssl_stapling on; # Requires nginx >= 1.3.7<br>
+ssl_stapling_verify on; # Requires nginx => 1.3.7<br>
+resolver 8.8.8.8 8.8.4.4 valid=300s;<br>
+resolver_timeout 5s;<br><br>
 
-add_header X-Frame-Options DENY;
-add_header X-Content-Type-Options nosniff;
-add_header X-XSS-Protection "1; mode=block";
+add_header X-Frame-Options DENY;<br>
+add_header X-Content-Type-Options nosniff;<br>
+add_header X-XSS-Protection "1; mode=block";<br>
 
 <br>
-sudo nano /etc/nginx/sites-available/conf.d/test
+sudo nano /etc/nginx/sites-available/conf.d/test<br>
+>
 >server {
-    listen 443 ssl;
-    listen [::]:443 ssl;
-    include snippets/self-signed.conf;
-    include snippets/ssl-params.conf;
+>    listen 443 ssl;
+>    listen [::]:443 ssl;
+>    include snippets/self-signed.conf;
+>    include snippets/ssl-params.conf;
+>
+>    server_name example.com www.example.com;
+>
+>    root /var/www/example.com/html;
+>    index index.html index.htm index.nginx-debian.html;
+>
+>    . . .
 
-    server_name example.com www.example.com;
 
-    root /var/www/example.com/html;
-    index index.html index.htm index.nginx-debian.html;
-
-    . . .
-}
-. . .
-server {
-    listen 80;
-    listen [::]:80;
-
-    server_name example.com www.example.com;
-
-    return 302 https://$server_name$request_uri;
-}
+>}
+>. . .
+>server {
+>    listen 80;
+>    listen [::]:80;
+>
+>    server_name example.com www.example.com;
+>
+>    return 302 https://$server_name$request_uri;
+>}
 <br>
 sudo ufw allow 'Nginx Full'<br>
 sudo ufw delete allow 'Nginx HTTP'<br>
-sudo systemctl restart nginx
+sudo systemctl restart nginx<br>
 </p>
 
 
