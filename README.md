@@ -354,12 +354,12 @@ server {<br>
     include snippets/self-signed.conf;<br>
     include snippets/ssl-params.conf;<br><br>
 
-    server_name example.com www.example.com;<br>
-    root /var/www/example.com/html;<br>
+   server_name example.com www.example.com;<br>
+   root /var/www/example.com/html;<br>
     
-    index index.html index.htm index.nginx-debian.html;<br><br>
+   index index.html index.htm index.nginx-debian.html;<br><br>
 
-    . . .<br><br>
+   . . .<br><br>
 
 }<br>
 . . .<br>
@@ -367,9 +367,9 @@ server {<br>
     listen 80;<br>
     listen [::]:80;<br><br>
 
-    server_name example.com www.example.com;<br><br>
+   server_name example.com www.example.com;<br><br>
 
-    return 302 https://$server_name$request_uri;<br>
+   return 302 https://$server_name$request_uri;<br>
 }<br>
 <br>
 sudo ufw allow 'Nginx Full'<br>
