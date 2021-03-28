@@ -314,9 +314,9 @@ location / {<br>
     
 configurer le fichier hosts (/etc/hosts)
 - sur notre machine windows :
-configurer le fichier hosts
+configurer le fichier hosts<br>
 
-#Configurer la connexion en https :
+# Configurer la connexion en https :
 - coté reverse proxy :
 <p>
    sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt<br>
@@ -340,9 +340,7 @@ ssl_stapling on; # Requires nginx >= 1.3.7
 ssl_stapling_verify on; # Requires nginx => 1.3.7
 resolver 8.8.8.8 8.8.4.4 valid=300s;
 resolver_timeout 5s;
-# Disable strict transport security for now. You can uncomment the following
-# line if you understand the implications.
-# add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload";
+
 add_header X-Frame-Options DENY;
 add_header X-Content-Type-Options nosniff;
 add_header X-XSS-Protection "1; mode=block";
@@ -375,7 +373,7 @@ server {
 sudo ufw allow 'Nginx Full'<br>
 sudo ufw delete allow 'Nginx HTTP'<br>
 sudo systemctl restart nginx
-
+</p>
 
 
     
