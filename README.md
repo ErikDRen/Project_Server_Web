@@ -1,7 +1,7 @@
 # Project_Server_Web
 a simple projec on a Web Server
 # Lexique :
-back-end : Aussi appelé un "arrière-plan" est un terme désignant un étage de sortie d'un logiciel devant produire un résultat. <br>
+back-end : est un terme désignant un étage de sortie d'un logiciel devant produire un résultat. <br>
 
 reverse proxy : intermédiaire entre les clients et les serveurs web. Par exemple, 
 il permet d’apporter de la sécurité.<br>
