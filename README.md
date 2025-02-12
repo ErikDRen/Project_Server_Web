@@ -1,5 +1,5 @@
 # Project_Server_Web
-a simple projec on a Web Server
+a simple project on a Web Server
 # Lexique :
 back-end : est un terme désignant un étage de sortie d'un logiciel devant produire un résultat. <br>
 
